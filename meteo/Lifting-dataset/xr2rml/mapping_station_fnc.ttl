@@ -1,0 +1,90 @@
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml:     <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr:      <http://www.w3.org/ns/r2rml#> .
+@prefix schema:  <http://schema.org/> .
+@prefix weo:     <http://ns.inria.fr/meteo/ontology/> .
+@prefix xrr:     <http://i3s.unice.fr/xr2rml#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix geo2: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+<#Stations>
+    a rr:TriplesMap;
+    xrr:logicalSource [ xrr:query """db.SynopStations.find({})""" ];
+    
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/meteo/weatherstation/{$.code}";
+        rr:class geosparql:Feature;
+        rr:class weo:WeatherStation;
+    ];
+    
+    # Station's name
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [ 
+            xrr:reference "$.station";
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+   # Station's ID
+    rr:predicateObjectMap [
+        rr:predicate weo:stationID;
+        rr:objectMap [ 
+            xrr:reference "$.code";
+            rr:termType rr:Literal;
+            rr:datatype xsd:string;
+        ];
+    ];
+  # Station's Latitude
+    rr:predicateObjectMap [
+        rr:predicate geo2:lat;
+        rr:objectMap [ 
+            xrr:reference "$.latitude";
+            rr:termType rr:Literal;
+            rr:datatype xsd:double;
+        ];
+    ];
+ # Station's Longitude
+    rr:predicateObjectMap [
+        rr:predicate geo2:long;
+        rr:objectMap [ 
+            xrr:reference "$.longitude";
+            rr:termType rr:Literal;
+            rr:datatype xsd:double;
+        ];
+    ];
+    # Station's altitude
+    rr:predicateObjectMap [
+        rr:predicate geo2:altitude;
+        rr:objectMap [ 
+            xrr:reference "$.altitude";
+            rr:termType rr:Literal;
+            rr:datatype xsd:double;
+        ];
+    ];
+.
+
+<#Geometries>
+    a rr:TriplesMap;
+    xrr:logicalSource [ xrr:query """db.SynopStations.find({})""" ];
+
+    rr:subjectMap [
+        rr:template "{$._id}_Point";
+        rr:class geosparql:Geometry;
+        rr:termType rr:BlankNode;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate geosparql:asWKT;
+          rr:objectMap [
+            rr:template "POINT({$.latitude} {$.longitude})";
+            rr:datatype geosparql:wktLiteral
+          ];
+    ];
+.

@@ -1,0 +1,21 @@
+#query number of observations available for each weather parameter
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX wep: <http://ns.inria.fr/meteo/ontology/property/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+prefix weo:  <http://ns.inria.fr/meteo/ontology/> 
+prefix dct:  <http://purl.org/dc/terms/> 
+prefix wdt:  <http://www.wikidata.org/prop/direct/> 
+prefix wikibase: <http://wikiba.se/ontology#> 
+prefix bd: <http://www.bigdata.com/rdf#> 
+
+select  ?Property (count(?obs) as ?nbO)   where 
+ {
+?obs a  <http://ns.inria.fr/meteo/ontology/MeteorologicalObservation>;  
+sosa:observedProperty
+              ?wp .
+?wp skos:prefLabel ?l
+BIND(str(?l) as ?Property)
+}
+group by ?Property

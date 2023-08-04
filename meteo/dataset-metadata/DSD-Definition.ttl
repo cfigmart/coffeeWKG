@@ -1,0 +1,110 @@
+@prefix wes-dimension: <http://ns.inria.fr/meteo/observationslice/dimension#> .
+@prefix weo:   <http://ns.inria.fr/meteo/ontology/> .
+@prefix qb4st: <http://resources.opengeospatial.org/def/qbcomponents/qb4st> .
+@prefix wes:   <http://ns.inria.fr/meteo/observationslice/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb:    <http://purl.org/linked-data/cube#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix time:  <http://www.w3.org/2006/time#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix wes-attribute: <http://ns.inria.fr/meteo/observationslice/attribute#> .
+@prefix wes-measure: <http://ns.inria.fr/meteo/observationslice/measure#> .
+@prefix wevp:  <http://ns.inria.fr/meteo/vocab/weatherproperty/> .
+
+<http://ns.inria.fr/meteo/dataset-MF/2018>
+        a                qb:DataSet ;
+        dct:description  "French Weather Dataset for 2018 uplifted and aggregated from Meteo-France Open Data Archives"@en ;
+        qb:structure     wes:annualTimeSeries .
+
+<http://ns.inria.fr/meteo/dataset-MF/2021>
+        a                qb:DataSet ;
+        dct:description  "RDF French Weather Dataset for 2021 uplifted and aggregated from Meteo-France Open Data Archives"@en ;
+        qb:structure     wes:annualTimeSeries .
+
+<http://ns.inria.fr/meteo/dataset-MF/2017>
+        a                qb:DataSet ;
+        dct:description  "French Weather Dataset for 2017 uplifted and aggregated from Meteo-France Open Data Archives"@en ;
+        qb:structure     wes:annualTimeSeries .
+
+<http://ns.inria.fr/meteo/dataset-MF/2020>
+        a                qb:DataSet ;
+        dct:description  "French Weather Dataset for 2020 uplifted and aggregated from Meteo-France Open Data Archives"@en ;
+        qb:structure     wes:annualTimeSeries .
+
+<http://ns.inria.fr/meteo/dataset-MF/2016>
+        a                qb:DataSet ;
+        dct:description  "French Weather Dataset for 2016 uplifted and aggregated from Meteo-France Open Data Archives"@en ;
+        qb:structure     wes:annualTimeSeries .
+
+wes-measure:avgDailyTemperature
+        a                           qb:MeasureProperty , rdf:Property ;
+        rdfs:label                  "Mean Daily Temperature in Celsius"@en ;
+        rdfs:range                  xsd:decimal ;
+        qb:concept                  wevp:airTemperature ;
+        sdmx-attribute:unitMeasure  <http://qudt.org/vocab/unit/DEG_C> .
+
+wes-measure:minDailyTemperature
+        a                           qb:MeasureProperty , rdf:Property ;
+        rdfs:label                  "Minimum Daily Temperature in Celsius"@en ;
+        rdfs:range                  xsd:decimal ;
+        qb:concept                  wevp:airTemperature ;
+        sdmx-attribute:unitMeasure  <http://qudt.org/vocab/unit/DEG_C> .
+
+wes-measure:maxDailyTemperature
+        a                           qb:MeasureProperty , rdf:Property ;
+        rdfs:label                  "Maximum Daily Temperature in Celsius"@en ;
+        rdfs:range                  xsd:decimal ;
+        qb:concept                  wevp:airTemperature ;
+        sdmx-attribute:unitMeasure  <http://qudt.org/vocab/unit/DEG_C> .
+
+wes:sliceByStationAndYear
+        a                     qb:SliceKey ;
+        rdfs:comment          "Meterological Data slice by grouping meterological observations of the same station together by year"@en ;
+        rdfs:label            "Meterological observations sliced by weather station and by year"@en ;
+        qb:componentProperty  wes-dimension:year , wes-dimension:station .
+
+wes-measure:rainfall24h
+        a                           qb:MeasureProperty , rdf:Property ;
+        rdfs:label                  "Cumulative Rainfall during 24h"@en ;
+        rdfs:range                  xsd:decimal ;
+        qb:concept                  wevp:precipitationAmount ;
+        sdmx-attribute:unitMeasure  <http://qudt.org/vocab/unit/MilliM> .
+
+wes:annualTimeSeries  a  qb4st:SpatioTemporalDSD , qb:DataStructureDefinition ;
+        qb:component  [ qb:measure  wes-measure:avgDailyTemperature ] ;
+        qb:component  [ qb:componentAttachment  qb:Slice ;
+                        qb:dimension            wes-dimension:year ;
+                        qb:order                2
+                      ] ;
+        qb:component  [ qb:attribute            wes-attribute:Date ;
+                        qb:componentAttachment  qb:Slice
+                      ] ;
+        qb:component  [ qb:measure  wes-measure:rainfall24h ] ;
+        qb:component  [ qb:measure  wes-measure:minDailyTemperature ] ;
+        qb:component  [ qb:measure  wes-measure:maxDailyTemperature ] ;
+        qb:component  [ qb:componentAttachment  qb:Slice ;
+                        qb:dimension            wes-dimension:station ;
+                        qb:order                1
+                      ] ;
+        qb:sliceKey   wes:SliceByStationAndYear .
+
+wes-dimension:station
+        a                   qb:DimensionProperty , rdf:Property ;
+        rdfs:label          "a weather station as a spatial dimension" ;
+        rdfs:range          weo:WeatherStation ;
+        rdfs:subPropertyOf  sdmx-dimension:refArea .
+
+<http://ns.inria.fr/meteo/dataset-MF/2019>
+        a                qb:DataSet ;
+        dct:description  "French Weather Dataset for 2019 uplifted and aggregated from Meteo-France Open Data Archives"@en ;
+        qb:structure     wes:annualTimeSeries .
+
+wes-dimension:year  a       qb:DimensionProperty , rdf:Property ;
+        rdfs:label          "a year as a temporal dimension" ;
+        rdfs:range          xsd:gYear ;
+        rdfs:subPropertyOf  sdmx-dimension:refPeriod .

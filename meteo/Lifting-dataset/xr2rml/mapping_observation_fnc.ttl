@@ -1,0 +1,182 @@
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix weo: <http://ns.inria.fr/meteo/ontology/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix time: <http://www.w3.org/2006/time#>. 
+@prefix xrr: <http://i3s.unice.fr/xr2rml#> .
+@prefix rr:  <http://www.w3.org/ns/r2rml#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wep: <http://ns.inria.fr/meteo/ontology/property/> .
+
+<#pmer_Observation>
+    a rr:TriplesMap;
+    xrr:logicalSource [ 
+    xrr:query """db.SynopWeather10.find({}})"""; 
+    xrr:format xrr:JSON 
+    ];
+    
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/meteo/observation/obs_at_{$.date}_{$.station_code}/pmer";
+        rr:class weo:MeteorologicalObservation;
+    ];
+    
+    # observable property
+    rr:predicateObjectMap [
+        rr:predicate sosa:observedProperty;
+        rr:objectMap [ 
+            rr:constant <http://ns.inria.fr/meteo/vocab/weatherproperty/airTemperature>;
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate sosa:hasFeatureOfInterest;
+        rr:objectMap [ 
+            rr:constant <http://ns.inria.fr/meteo/vocab/meteorologicalfeature/air>;
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate wep:madeByStation;
+        rr:objectMap [ 
+            rr:template "http://ns.inria.fr/meteo/weatherstation/{$.station_code}";
+            rr:termType rr:IRI;
+        ];   
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate sosa:resultTime;
+        rr:objectMap [ 
+            xrr:reference "$.dateF";
+            rr:termType rr:Literal;
+            rr:datatype xsd:dateTime;
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate sosa:hasSimpleResult;
+        rr:objectMap [
+            xrr:reference "$.t_med";
+            rr:termType rr:Literal;
+            rr:datatype xsd:double;
+            ]; 
+    ].
+
+
+<#humidity_Observation>
+    a rr:TriplesMap;
+    xrr:logicalSource [ xrr:query """db.SynopWeather10.find(})""" ];
+    
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/meteo/observation/obs_at_{$.date}_{$.station_code}/u";
+        rr:class weo:MeteorologicalObservation;
+    ];
+    
+    # observable property
+    rr:predicateObjectMap [
+        rr:predicate sosa:observedProperty;
+        rr:objectMap [ 
+            rr:constant <http://ns.inria.fr/meteo/vocab/weatherproperty/airRelativeHumidity>;
+            rr:termType rr:IRI;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate sosa:hasFeatureOfInterest;
+        rr:objectMap [ 
+            rr:constant <http://ns.inria.fr/meteo/vocab/meteorologicalfeature/air>;
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate wep:madeByStation;
+        rr:objectMap [ 
+            rr:template "http://ns.inria.fr/meteo/weatherstation/{$.station_code}";
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate sosa:resultTime;
+        rr:objectMap [ 
+            xrr:reference "$.dateF";
+            rr:termType rr:Literal;
+            rr:datatype xsd:dateTime;
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate sosa:hasSimpleResult;
+        rr:objectMap [
+            xrr:reference "$.humidity_rel";
+            rr:termType rr:Literal;
+            rr:datatype xsd:double;
+        ]; 
+    ].
+
+<#rr24_Observation>
+    a rr:TriplesMap;
+    xrr:logicalSource [ xrr:query """db.SynopWeather10.find({})""" ];
+    
+    rr:subjectMap [
+        rr:template "http://ns.inria.fr/meteo/observation/obs_at_{$.date}_{$.station_code}/rr24";
+        rr:class weo:MeteorologicalObservation;
+    ];
+    
+    # observable property
+    rr:predicateObjectMap [
+        rr:predicate sosa:observedProperty;
+        rr:objectMap [ 
+            rr:constant <http://ns.inria.fr/meteo/vocab/weatherproperty/precipitationAmount>;
+            rr:termType rr:IRI;
+        ];
+    ];
+     rr:predicateObjectMap [
+        rr:predicate sosa:hasFeatureOfInterest;
+        rr:objectMap [ 
+            rr:constant <http://ns.inria.fr/meteo/vocab/meteorologicalfeature/precipitation>;
+            rr:termType rr:IRI;
+        ];
+    ];
+
+
+    rr:predicateObjectMap [
+        rr:predicate wep:madeByStation;
+        rr:objectMap [ 
+            rr:template "http://ns.inria.fr/meteo/weatherstation/{$.station_code}";
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate sosa:resultTime;
+        rr:objectMap [ 
+            xrr:reference "$.dateF";
+            rr:termType rr:Literal;
+            rr:datatype xsd:dateTime;
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate sosa:hasSimpleResult;
+        rr:objectMap [
+           xrr:reference "$.p_total";
+            rr:termType rr:Literal;
+            rr:datatype xsd:double;
+        ]; 
+    ];
+   rr:predicateObjectMap [
+     rr:predicate sosa:phenomenonTime;
+        rr:objectMap [
+            rr:template "obs_at_{$.date}_{$.station_code}/rr24_PhenomenonTime";
+            rr:termType rr:BlankNode;
+        ]; 
+    ].
+
+    
+
+

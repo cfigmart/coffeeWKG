@@ -1,0 +1,21 @@
+#query weather stations and located french regions 
+PREFIX weo: <http://ns.inria.fr/meteo/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dct:  <http://purl.org/dc/terms/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+
+SELECT distinct ?l ?item ?itemLabel WHERE {
+  ?x a weo:WeatherStation . 
+  ?x rdfs:label ?l .
+  ?x dct:spatial ?e.
+  SERVICE <http://query.wikidata.org/sparql> 
+     {  
+    SELECT * WHERE {    
+         ?e wdt:P131* ?item .
+         ?item rdfs:label ?itemLabel.
+         ?item  wdt:P31 wd:Q36784 .
+    FILTER(langMatches(lang(?itemLabel), "FR"))  
+}   
+}
+}

@@ -1,0 +1,5 @@
+#retrieve all features of interest and properties
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+select * where {
+  ?x  ssn:hasProperty  ?y
+}

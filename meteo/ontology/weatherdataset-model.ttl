@@ -1,0 +1,143 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dct: <http://purl.org/dcterms/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix weo: <http://ns.inria.fr/meteo/ontology/> .
+@prefix wep: <http://ns.inria.fr/meteo/ontology/property/> .
+
+weo:WeatherStation
+  a owl:Class ;
+  rdfs:subClassOf sosa:Platform, geosparql:Feature ;
+  rdfs:label "Meteo France Synop Weather Station" .
+
+weo:WeatherProperty
+  a owl:Class;
+  rdfs:label "Weather Property"@en ;
+  skos:definition "An observable quality (property, characteristic) of a meterological feature of interest. A weather property can be measured (e.g. wind speed) or observed (cloud cover)."@en ;
+  owl:equivalentClass [ owl:intersectionOf (sosa:ObservableProperty
+  [ a owl:Restriction ; owl:onProperty ssn:isPropertyOf ; owl:cardinality "1"^^xsd:nonNegativeInteger ]
+  [ a owl:Restriction ; owl:onProperty ssn:isPropertyOf ; owl:allValuesFrom weo:MeteorologicalFeature ])] ;
+  rdfs:comment "A weather Property is an observable property of exactly one Meterological feature of interest."@en .
+
+weo:MeteorologicalFeature
+  a owl:Class, rdfs:Class ;
+  rdfs:label "Meteorological Feature"@en;
+  skos:definition "The meteorological phenomenon whose property is being measured or observed in the course of an observation."@en ;
+  owl:equivalentClass [owl:intersectionOf (sosa:FeatureOfInterest 
+  [ a owl:Restriction; owl:onProperty ssn:hasProperty; owl:allValuesFrom weo:WeatherProperty] 
+  [ a owl:Restriction; owl:onProperty ssn:hasProperty; owl:minCardinality "1"^^xsd:nonNegativeInteger]) ];
+  rdfs:comment "For each Meteorological feature such as wind or precipitations, at least one property (precipitation amount) need to be defined "@en .
+
+weo:MeteorologicalObservation
+  a owl:Class ;
+  rdfs:label "Meterological Observation"@en ;
+  skos:definition "Result of carrying out a procedure to estimate a value of a property of a Meterological feature."@en ;
+  owl:equivalentClass [ owl:intersectionOf (sosa:Observation  
+  [ a owl:Restriction ; owl:onProperty sosa:observedProperty ; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger; owl:onClass weo:WeatherProperty]
+  [ a owl:Restriction ; owl:onProperty sosa:hasFeatureOfInterest; owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger; owl:onClass weo:MeteorologicalFeature])];
+  rdfs:comment " A meterological observation is an observation which is linked to exactly one weather property and one meteorological feature."@en .
+
+weo:Interval3h
+    a owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf (
+        time:Interval
+        [   a owl:Restriction;
+            owl:onProperty time:hasDuration;
+            owl:allValuesFrom  [
+                owl:intersectionOf (
+                    time:Duration
+                    [ a owl:Restriction; owl:onProperty time:numericDuration; owl:hasValue 3.0 ]
+                    [ a owl:Restriction; owl:onProperty time:unitType; owl:hasValue time:unitHour]
+                )
+            ]
+        ]    
+    )].
+
+
+weo:Interval6h
+    a owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf (
+        time:Interval
+        [   a owl:Restriction;
+            owl:onProperty time:hasDuration;
+            owl:allValuesFrom  [
+                owl:intersectionOf (
+                    time:Duration
+                    [ a owl:Restriction; owl:onProperty time:numericDuration; owl:hasValue 6.0 ]
+                    [ a owl:Restriction; owl:onProperty time:unitType; owl:hasValue time:unitHour]
+                )
+            ]
+        ]    
+    )].
+
+weo:Interval12h
+    a owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf (
+        time:Interval
+        [   a owl:Restriction;
+            owl:onProperty time:hasDuration;
+            owl:allValuesFrom  [
+                owl:intersectionOf (
+                    time:Duration
+                    [ a owl:Restriction; owl:onProperty time:numericDuration; owl:hasValue 12.0 ]
+                    [ a owl:Restriction; owl:onProperty time:unitType; owl:hasValue time:unitHour]
+                )
+            ]
+        ]    
+    )].
+
+weo:Interval24h
+    a owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf (
+        time:Interval
+        [   a owl:Restriction;
+            owl:onProperty time:hasDuration;
+            owl:allValuesFrom  [
+                owl:intersectionOf (
+                    time:Duration
+                    [ a owl:Restriction; owl:onProperty time:numericDuration; owl:hasValue 24.0 ]
+                    [ a owl:Restriction; owl:onProperty time:unitType; owl:hasValue time:unitHour]
+                )
+            ]
+        ]    
+    )].
+
+
+weo:Interval10m
+    a owl:Class ;
+    owl:equivalentClass [ owl:intersectionOf (
+        time:Interval
+        [   a owl:Restriction;
+            owl:onProperty time:hasDuration;
+            owl:allValuesFrom  [
+                owl:intersectionOf (
+                    time:Duration
+                    [ a owl:Restriction; owl:onProperty time:numericDuration; owl:hasValue 10.0 ]
+                    [ a owl:Restriction; owl:onProperty time:unitType; owl:hasValue time:unitMinute]
+                )
+            ]
+        ]    
+    )].
+
+    
+wep:madeByStation
+  a owl:ObjectProperty ; 
+  rdfs:domain <http://ns.inria.fr/meteo/ontology/WeatherStation> ;
+  rdfs:range <http://ns.inria.fr/meteo/ontology/MeteorologicalObservation> .
+ 
+wep:stationID
+  a owl:DatatypeProperty ;
+  skos:prefLabel "ID";
+  rdfs:domain <http://ns.inria.fr/meteo/ontology/WeatherStation> .
+
+wep:hasAbbreviation
+  a owl:DatatypeProperty ;
+  skos:prefLabel "Mnémonique"@fr;
+  rdfs:domain <http://ns.inria.fr/meteo/ontology/WeatherProperty> .

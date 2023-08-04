@@ -1,0 +1,697 @@
+@prefix rr:      <http://www.w3.org/ns/r2rml#> .
+@prefix weo:     <http://ns.inria.fr/meteo/ontology/> .
+@prefix schema:  <http://schema.org/> .
+@prefix mo:      <http://purl.org/ontology/mo/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dbo:     <http://dbpedia.org/ontology/> .
+@prefix rml:     <http://semweb.mmlab.be/ns/rml#> .
+@prefix geo2:    <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geosparql:  <http://www.opengis.net/ont/geosparql#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix xrr:     <http://i3s.unice.fr/xr2rml#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00051>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Venecia" ;
+      weo:stationID "COXX00051" ;
+      geo2:altitude "1168"^^xsd:double ;
+      geo2:lat "4.333333333333333"^^xsd:double ;
+      geo2:long "-75.83333333333333"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00048>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "La Trinidad" ;
+      weo:stationID "COXX00048" ;
+      geo2:altitude "1456"^^xsd:double ;
+      geo2:lat "4.9"^^xsd:double ;
+      geo2:long "-75.03333333333333"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(10.80027777777778 -74.01722222222222)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(3.816666666666666 -76.53333333333333)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.783333333333333 -76.18333333333334)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(3.116666666666667 -75.66666666666667)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00012>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Planalto" ;
+      weo:stationID "COXX00012" ;
+      geo2:altitude "1413"^^xsd:double ;
+      geo2:lat "4.983333333333333"^^xsd:double ;
+      geo2:long "-75.58333333333333"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.333333333333333 -75.83333333333333)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.283333333333333 -75.9)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00024>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "MontelÃ­bano" ;
+      weo:stationID "COXX00024" ;
+      geo2:altitude "1365"^^xsd:double ;
+      geo2:lat "5.45"^^xsd:double ;
+      geo2:long "-74.33333333333333"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.666666666666667 -75.78333333333333)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.950277777777778 -74.40055555555556)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.433333333333334 -75.5)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00036>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Maracay" ;
+      weo:stationID "COXX00036" ;
+      geo2:altitude "1402"^^xsd:double ;
+      geo2:lat "4.6"^^xsd:double ;
+      geo2:long "-75.73333333333333"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(3.966666666666667 -74.58333333333333)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00008>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "CenicafÃ©" ;
+      weo:stationID "COXX00008" ;
+      geo2:altitude "1310"^^xsd:double ;
+      geo2:lat "5.0"^^xsd:double ;
+      geo2:long "-75.6"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.333333333333333 -75.81666666666666)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.933333333333334 -74.41666666666667)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.3 -75.73333333333333)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.05 -75.5)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00040>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "El Cedral" ;
+      weo:stationID "COXX00040" ;
+      geo2:altitude "2120"^^xsd:double ;
+      geo2:lat "4.7"^^xsd:double ;
+      geo2:long "-75.53333333333333"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(1.833333333333333 -76.15)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00052>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "AlbÃ¡n" ;
+      weo:stationID "COXX00052" ;
+      geo2:altitude "1510"^^xsd:double ;
+      geo2:lat "4.783333333333333"^^xsd:double ;
+      geo2:long "-76.18333333333334"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.5 -75.66666666666667)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.55 -74.43333333333334)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(10.41666666666667 -73.56666666666666)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00037>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Ospirma" ;
+      weo:stationID "COXX00037" ;
+      geo2:altitude "1661"^^xsd:double ;
+      geo2:lat "5.333333333333333"^^xsd:double ;
+      geo2:long "-75.81666666666666"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00049>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "El Tucuy" ;
+      weo:stationID "COXX00049" ;
+      geo2:altitude "1452"^^xsd:double ;
+      geo2:lat "3.966666666666667"^^xsd:double ;
+      geo2:long "-74.58333333333333"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00001>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "El Trapiche" ;
+      weo:stationID "COXX00001" ;
+      geo2:altitude "1277"^^xsd:double ;
+      geo2:lat "5.8"^^xsd:double ;
+      geo2:long "-76.01666666666667"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00013>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Santa Helena" ;
+      weo:stationID "COXX00013" ;
+      geo2:altitude "1395"^^xsd:double ;
+      geo2:lat "5.316666666666666"^^xsd:double ;
+      geo2:long "-75.0"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00025>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Jorge Villamil" ;
+      weo:stationID "COXX00025" ;
+      geo2:altitude "1420"^^xsd:double ;
+      geo2:lat "2.333333333333333"^^xsd:double ;
+      geo2:long "-75.51666666666667"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00009>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Naranjal" ;
+      weo:stationID "COXX00009" ;
+      geo2:altitude "1381"^^xsd:double ;
+      geo2:lat "4.966666666666667"^^xsd:double ;
+      geo2:long "-75.65"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.4 -75.73333333333333)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(1.616666666666667 -77.11666666666666)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00021>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Santa Rosita" ;
+      weo:stationID "COXX00021" ;
+      geo2:altitude "1437"^^xsd:double ;
+      geo2:lat "5.266666666666667"^^xsd:double ;
+      geo2:long "-74.28333333333333"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(1.25 -77.48333333333333)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(7.733333333333333 -72.78333333333333)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00061>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "El Mirador" ;
+      weo:stationID "COXX00061" ;
+      geo2:altitude "1683"^^xsd:double ;
+      geo2:lat "4.950277777777778"^^xsd:double ;
+      geo2:long "-74.40055555555556"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.466666666666667 -75.26666666666667)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00006>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "El Rosario" ;
+      weo:stationID "COXX00006" ;
+      geo2:altitude "1635"^^xsd:double ;
+      geo2:lat "5.966666666666667"^^xsd:double ;
+      geo2:long "-75.7"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00018>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Pueblo Bello" ;
+      weo:stationID "COXX00018" ;
+      geo2:altitude "1134"^^xsd:double ;
+      geo2:lat "10.41666666666667"^^xsd:double ;
+      geo2:long "-73.56666666666666"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00022>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Santa BÃ¡rbara" ;
+      weo:stationID "COXX00022" ;
+      geo2:altitude "1478"^^xsd:double ;
+      geo2:lat "4.933333333333334"^^xsd:double ;
+      geo2:long "-74.41666666666667"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00034>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "El Agrado" ;
+      weo:stationID "COXX00034" ;
+      geo2:altitude "1275"^^xsd:double ;
+      geo2:lat "4.516666666666667"^^xsd:double ;
+      geo2:long "-75.8"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00046>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Tricontinental" ;
+      weo:stationID "COXX00046" ;
+      geo2:altitude "1269"^^xsd:double ;
+      geo2:lat "5.15"^^xsd:double ;
+      geo2:long "-75.0"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00058>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "La Cascada" ;
+      weo:stationID "COXX00058" ;
+      geo2:altitude "1368"^^xsd:double ;
+      geo2:lat "1.833333333333333"^^xsd:double ;
+      geo2:long "-76.15"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.216666666666667 -76.31666666666666)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.6 -75.73333333333333)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.716666666666667 -74.45)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00062>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "AgroberlÃ­n" ;
+      weo:stationID "COXX00062" ;
+      geo2:altitude "1290"^^xsd:double ;
+      geo2:lat "10.80027777777778"^^xsd:double ;
+      geo2:long "-74.01722222222222"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00010>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "El Algarrobo" ;
+      weo:stationID "COXX00010" ;
+      geo2:altitude "1202"^^xsd:double ;
+      geo2:lat "5.066666666666666"^^xsd:double ;
+      geo2:long "-75.58333333333333"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.966666666666667 -75.7)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(7.1 -73.06666666666666)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.15 -75.0)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.366666666666666 -74.43333333333334)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00050>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Arturo GÃ³mez" ;
+      weo:stationID "COXX00050" ;
+      geo2:altitude "1259"^^xsd:double ;
+      geo2:lat "4.666666666666667"^^xsd:double ;
+      geo2:long "-75.78333333333333"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00059>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "El CiprÃ©s" ;
+      weo:stationID "COXX00059" ;
+      geo2:altitude "1877"^^xsd:double ;
+      geo2:lat "5.433333333333334"^^xsd:double ;
+      geo2:long "-75.5"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.066666666666666 -75.58333333333333)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(6.066666666666666 -75.18333333333334)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00007>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Bertha" ;
+      weo:stationID "COXX00007" ;
+      geo2:altitude "1677"^^xsd:double ;
+      geo2:lat "5.883333333333333"^^xsd:double ;
+      geo2:long "-73.56666666666666"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00011>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "AlmacafÃ© Letras" ;
+      weo:stationID "COXX00011" ;
+      geo2:altitude "3684"^^xsd:double ;
+      geo2:lat "5.05"^^xsd:double ;
+      geo2:long "-75.33333333333333"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00023>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Granja Tibacuy" ;
+      weo:stationID "COXX00023" ;
+      geo2:altitude "1538"^^xsd:double ;
+      geo2:lat "4.366666666666666"^^xsd:double ;
+      geo2:long "-74.43333333333334"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00035>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "La Esperanza" ;
+      weo:stationID "COXX00035" ;
+      geo2:altitude "1667"^^xsd:double ;
+      geo2:lat "4.3"^^xsd:double ;
+      geo2:long "-75.73333333333333"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00047>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "ChapetÃ³n" ;
+      weo:stationID "COXX00047" ;
+      geo2:altitude "1353"^^xsd:double ;
+      geo2:lat "4.466666666666667"^^xsd:double ;
+      geo2:long "-75.26666666666667"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00019>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Mesitas de Santa InÃ©s" ;
+      weo:stationID "COXX00019" ;
+      geo2:altitude "1340"^^xsd:double ;
+      geo2:lat "4.716666666666667"^^xsd:double ;
+      geo2:long "-74.45"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.066666666666666 -75.66666666666667)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(2.4 -76.73333333333333)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.066666666666666 -75.68333333333334)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00031>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Francisco Romero" ;
+      weo:stationID "COXX00031" ;
+      geo2:altitude "903"^^xsd:double ;
+      geo2:lat "7.733333333333333"^^xsd:double ;
+      geo2:long "-72.78333333333333"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00043>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "El Roble" ;
+      weo:stationID "COXX00043" ;
+      geo2:altitude "1646"^^xsd:double ;
+      geo2:lat "6.866666666666667"^^xsd:double ;
+      geo2:long "-73.05"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00004>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Virgen de Oro" ;
+      weo:stationID "COXX00004" ;
+      geo2:altitude "1656"^^xsd:double ;
+      geo2:lat "5.75"^^xsd:double ;
+      geo2:long "-75.7"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00016>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Manuel MejÃ­a" ;
+      weo:stationID "COXX00016" ;
+      geo2:altitude "1735"^^xsd:double ;
+      geo2:lat "2.4"^^xsd:double ;
+      geo2:long "-76.73333333333333"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00028>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "El Sauce" ;
+      weo:stationID "COXX00028" ;
+      geo2:altitude "1609"^^xsd:double ;
+      geo2:lat "1.616666666666667"^^xsd:double ;
+      geo2:long "-77.11666666666666"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00044>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Alberto Santos" ;
+      weo:stationID "COXX00044" ;
+      geo2:altitude "1499"^^xsd:double ;
+      geo2:lat "6.5"^^xsd:double ;
+      geo2:long "-73.21666666666667"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00056>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "AgronomÃ­a" ;
+      weo:stationID "COXX00056" ;
+      geo2:altitude "2088"^^xsd:double ;
+      geo2:lat "5.05"^^xsd:double ;
+      geo2:long "-75.5"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00020>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Misiones" ;
+      weo:stationID "COXX00020" ;
+      geo2:altitude "1540"^^xsd:double ;
+      geo2:lat "4.55"^^xsd:double ;
+      geo2:long "-74.43333333333334"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00032>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Paraguaicito" ;
+      weo:stationID "COXX00032" ;
+      geo2:altitude "1203"^^xsd:double ;
+      geo2:lat "4.4"^^xsd:double ;
+      geo2:long "-75.73333333333333"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.7 -75.66666666666667)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.6 -75.85)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(3.683611111111111 -75.63388888888889)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00060>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "El RubÃ­" ;
+      weo:stationID "COXX00060" ;
+      geo2:altitude "1725"^^xsd:double ;
+      geo2:lat "3.116666666666667"^^xsd:double ;
+      geo2:long "-75.66666666666667"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.75 -75.73333333333333)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(6.866666666666667 -73.05)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.916666666666667 -75.61666666666666)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.8 -76.01666666666667)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.45 -74.33333333333333)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00005>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "La Cristalina" ;
+      weo:stationID "COXX00005" ;
+      geo2:altitude "775"^^xsd:double ;
+      geo2:lat "5.7"^^xsd:double ;
+      geo2:long "-75.66666666666667"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00017>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "La Trinidad" ;
+      weo:stationID "COXX00017" ;
+      geo2:altitude "1671"^^xsd:double ;
+      geo2:lat "2.75"^^xsd:double ;
+      geo2:long "-76.58333333333333"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00029>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Blonay" ;
+      weo:stationID "COXX00029" ;
+      geo2:altitude "1250"^^xsd:double ;
+      geo2:lat "7.566666666666666"^^xsd:double ;
+      geo2:long "-72.61666666666666"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00033>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "La Bella" ;
+      weo:stationID "COXX00033" ;
+      geo2:altitude "1449"^^xsd:double ;
+      geo2:lat "4.5"^^xsd:double ;
+      geo2:long "-75.66666666666667"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00045>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "La Aldea" ;
+      weo:stationID "COXX00045" ;
+      geo2:altitude "1635"^^xsd:double ;
+      geo2:lat "3.683611111111111"^^xsd:double ;
+      geo2:long "-75.63388888888889"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.05 -75.33333333333333)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.966666666666667 -75.65)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00057>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "SimÃ³n Campos" ;
+      weo:stationID "COXX00057" ;
+      geo2:altitude "1754"^^xsd:double ;
+      geo2:lat "2.350277777777778"^^xsd:double ;
+      geo2:long "-75.88388888888889"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.316666666666666 -75.0)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.883333333333333 -73.56666666666666)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00041>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "El JazmÃ­n" ;
+      weo:stationID "COXX00041" ;
+      geo2:altitude "1635"^^xsd:double ;
+      geo2:lat "4.916666666666667"^^xsd:double ;
+      geo2:long "-75.61666666666666"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00053>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Julio FernÃ¡ndez" ;
+      weo:stationID "COXX00053" ;
+      geo2:altitude "1381"^^xsd:double ;
+      geo2:lat "3.816666666666666"^^xsd:double ;
+      geo2:long "-76.53333333333333"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(8.416666666666666 -73.33333333333333)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(11.13333333333333 -74.1)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(7.566666666666666 -72.61666666666666)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00026>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "La Victoria" ;
+      weo:stationID "COXX00026" ;
+      geo2:altitude "1100"^^xsd:double ;
+      geo2:lat "11.13333333333333"^^xsd:double ;
+      geo2:long "-74.1"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00038>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "El PÃ­lamo" ;
+      weo:stationID "COXX00038" ;
+      geo2:altitude "1113"^^xsd:double ;
+      geo2:lat "4.866666666666667"^^xsd:double ;
+      geo2:long "-75.8"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.9 -75.03333333333333)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00002>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "CocornÃ¡" ;
+      weo:stationID "COXX00002" ;
+      geo2:altitude "1344"^^xsd:double ;
+      geo2:lat "6.066666666666666"^^xsd:double ;
+      geo2:long "-75.18333333333334"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00014>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Granja Luker" ;
+      weo:stationID "COXX00014" ;
+      geo2:altitude "1031"^^xsd:double ;
+      geo2:lat "5.066666666666666"^^xsd:double ;
+      geo2:long "-75.68333333333334"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.7 -75.53333333333333)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(2.350277777777778 -75.88388888888889)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.866666666666667 -75.8)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.516666666666667 -75.8)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00030>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Gabriel MarÃ­a Barriga" ;
+      weo:stationID "COXX00030" ;
+      geo2:altitude "1261"^^xsd:double ;
+      geo2:lat "8.416666666666666"^^xsd:double ;
+      geo2:long "-73.33333333333333"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(6.5 -73.21666666666667)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00042>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "San Antonio" ;
+      weo:stationID "COXX00042" ;
+      geo2:altitude "1539"^^xsd:double ;
+      geo2:lat "7.1"^^xsd:double ;
+      geo2:long "-73.06666666666666"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.75 -75.7)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00054>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "La Sirena" ;
+      weo:stationID "COXX00054" ;
+      geo2:altitude "1519"^^xsd:double ;
+      geo2:lat "4.283333333333333"^^xsd:double ;
+      geo2:long "-75.9"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(2.75 -76.58333333333333)"^^geosparql:wktLiteral .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.266666666666667 -74.28333333333333)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00015>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "SantÃ¡gueda" ;
+      weo:stationID "COXX00015" ;
+      geo2:altitude "1026"^^xsd:double ;
+      geo2:lat "5.066666666666666"^^xsd:double ;
+      geo2:long "-75.66666666666667"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(2.333333333333333 -75.51666666666667)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00027>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Ospina PÃ©rez" ;
+      weo:stationID "COXX00027" ;
+      geo2:altitude "1603"^^xsd:double ;
+      geo2:lat "1.25"^^xsd:double ;
+      geo2:long "-77.48333333333333"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00039>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "La Catalina" ;
+      weo:stationID "COXX00039" ;
+      geo2:altitude "1321"^^xsd:double ;
+      geo2:lat "4.75"^^xsd:double ;
+      geo2:long "-75.73333333333333"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(4.983333333333333 -75.58333333333333)"^^geosparql:wktLiteral .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00055>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Manuel M. Mallarino" ;
+      weo:stationID "COXX00055" ;
+      geo2:altitude "1331"^^xsd:double ;
+      geo2:lat "4.216666666666667"^^xsd:double ;
+      geo2:long "-76.31666666666666"^^xsd:double .
+
+<http://ns.inria.fr/meteo/weatherstation/COXX00003>
+      a       geosparql:Feature , weo:WeatherStation ;
+      rdfs:label "Miguel Valencia" ;
+      weo:stationID "COXX00003" ;
+      geo2:altitude "1621"^^xsd:double ;
+      geo2:lat "5.6"^^xsd:double ;
+      geo2:long "-75.85"^^xsd:double .
+
+[]    a       geosparql:Geometry ;
+      geosparql:asWKT "POINT(5.0 -75.6)"^^geosparql:wktLiteral .

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+  <link href="https://unpkg.com/@triply/yasgui/build/yasgui.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/@triply/yasgui/build/yasgui.min.js"></script>
+</head>
+<body>
+  <div id="yasgui"></div>
+  <script>
+    const yasgui = new Yasgui(document.getElementById("yasgui"), {
+  requestConfig: { endpoint: "http://weakg.i3s.unice.fr/sparql" },
+  copyEndpointOnNewTab: true,
+});
+// Add a new Tab. Returns the new Tab object.
+var idtabQ1 = yasgui.addTab(
+  true, // set as active tab
+  { ...Yasgui.Tab.getDefaults(), name: "Query1"}
+);
+
+// Get a Tab. Returns the current Tab if no tab id is given.
+//yasgui.getTab("Weather Properties in WekG-MF");
+
+var sparqlQuery1 = "PREFIX qudt: <http://qudt.org/schema/qudt/>\n" +
+		"PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
+    "PREFIX weo: <http://ns.inria.fr/meteo/ontology/>\n" +
+    "PREFIX wep: <http://ns.inria.fr/meteo/ontology/property/>\n" +
+    "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n" +
+		"SELECT DISTINCT * WHERE\n" +
+		" { ?x a weo:WeatherProperty; \n" +
+		"   skos:prefLabel ?l. \n" +
+		"   OPTIONAL {?x qudt:applicableUnit ?u} \n" +
+		"   OPTIONAL {?x wep:applicableWMOcode  ?u}\n"+
+    " }";
+
+idtabQ1.setQuery(sparqlQuery1)
+
+//idtab.setQuery("PREFIX qudt: <http://qudt.org/schema/qudt/> PREFIX rdfs: 
+//<http://www.w3.org/2000/01/rdf-schema#> PREFIX weo: <http://ns.inria.fr/meteo/ontology/>  
+//PREFIX wep: <http://ns.inria.fr/meteo/ontology/property/>  PREFIX skos: <http://www.w3.org/2004/02/skos/core#> select * where { ?x a weo:WeatherProperty; skos:prefLabel ?l. OPTIONAL {?x qudt:applicableUnit ?u} OPTIONAL {?x wep:applicableWMOcode  ?u}}");
+  </script>
+</body>

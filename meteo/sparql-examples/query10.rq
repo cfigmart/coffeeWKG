@@ -1,0 +1,29 @@
+#calculate average temperature during the first week of February
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX wep: <http://ns.inria.fr/meteo/ontology/property/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX wep: <http://ns.inria.fr/meteo/ontology/property/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd:   <http://www.wikidata.org/entity/>
+prefix weo:  <http://ns.inria.fr/meteo/ontology/> 
+
+select ?n ((avg(?v)- 273.15) as ?avgws) where 
+{
+  ?obs a  <http://ns.inria.fr/meteo/ontology/MeteorologicalObservation>; 
+sosa:observedProperty
+              <http://ns.inria.fr/meteo/vocab/weatherproperty/airTemperature> ;
+sosa:hasSimpleResult ?v; 
+wep:madeByStation ?station ;
+sosa:resultTime ?t .
+?station rdfs:label ?n ; weo:stationID ?stationID .
+FILTER(?t>= xsd:date("2021-02-01"))
+FILTER(?t < xsd:date("2021-02-07"))
+}
+group by ?n 
+
+
+
+

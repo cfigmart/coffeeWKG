@@ -1,0 +1,17 @@
+#calculate average wind speed at each station for each month
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX wep: <http://ns.inria.fr/meteo/ontology/property/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX weo: <http://ns.inria.fr/meteo/ontology/>
+
+select ?stationID  ?n ?t  (CONCAT((avg(?v)  as ?avg), " ", "m/s") AS ?avg_speed_wind)  where {
+?station rdfs:label ?n ; weo:stationID ?stationID.
+  ?obs a  <http://ns.inria.fr/meteo/ontology/MeteorologicalObservation>; 
+sosa:observedProperty
+  <http://ns.inria.fr/meteo/vocab/weatherproperty/windAverageSpeed>  ;
+sosa:hasSimpleResult  ?v; 
+wep:madeByStation ?station ;
+sosa:resultTime ?t .
+}
+GROUP BY ?stationID ?n ?t

@@ -1,0 +1,16 @@
+#list all Meteo-France Weather stations
+prefix dct:        <http://purl.org/dc/terms/> 
+prefix geo:        <http://www.w3.org/2003/01/geo/wgs84_pos#> 
+prefix weo:        <http://ns.inria.fr/meteo/ontology/> 
+prefix geosparql:  <http://www.opengis.net/ont/geosparql#> 
+prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix xsd:        <http://www.w3.org/2001/XMLSchema#> 
+prefix xrr:        <http://i3s.unice.fr/xr2rml#> 
+prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> 
+prefix wd:         <http://www.wikidata.org/entity/> 
+
+SELECT ?stationID  ?n ?place  where {
+ 
+?station a weo:WeatherStation; rdfs:label ?n ;  weo:stationID ?stationID ; dct:spatial ?place .
+
+} 
