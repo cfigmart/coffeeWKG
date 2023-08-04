@@ -1,3 +1,5 @@
+I'm going to update this read.me once I've finished the paper and the code. 
+
 # A Weather Knowlege Graph of Météo-France Archives
 
 The Météo-France RDF Weather dataset (WeKG-MF) is an RDF knowledge graph that provides access to meteorological measurements provided by 62 Météo-France weather stations located in different regions in metropolitan France and overseas departments. The dataset incorporates measurements of several weather parameters such as wind direction and speed, air pressure, precipitations, humidity and air temperature. These measurements are provided every three hours per day.
