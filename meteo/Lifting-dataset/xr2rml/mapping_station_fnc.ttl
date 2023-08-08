@@ -69,6 +69,13 @@
             rr:datatype xsd:double;
         ];
     ];
+ rr:predicateObjectMap [
+        rr:predicate geosparql:hasGeometry;
+        rr:objectMap [
+            rr:template "{$._id}_Point";
+            rr:termType rr:BlankNode;
+        ]; 
+    ];
 .
 
 <#Geometries>
