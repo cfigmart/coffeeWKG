@@ -72,7 +72,7 @@
  rr:predicateObjectMap [
         rr:predicate geosparql:hasGeometry;
         rr:objectMap [
-            rr:template "{$._id}_Point";
+            rr:template "{$.code}_Point";
             rr:termType rr:BlankNode;
         ]; 
     ];
@@ -83,7 +83,7 @@
     xrr:logicalSource [ xrr:query """db.SynopStations.find({})""" ];
 
     rr:subjectMap [
-        rr:template "{$._id}_Point";
+        rr:template "{$.code}_Point";
         rr:class geosparql:Geometry;
         rr:termType rr:BlankNode;
     ];
