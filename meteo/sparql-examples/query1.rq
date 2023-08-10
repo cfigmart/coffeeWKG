@@ -1,4 +1,0 @@
-#list all meteorological features in the dataset 
-select * where {
-  ?x  a  <http://ns.inria.fr/meteo/ontology/MeteorologicalFeature>
-}

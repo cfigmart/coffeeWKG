@@ -1,0 +1,42 @@
+prefix dbo:     <http://dbpedia.org/ontology/> 
+prefix dcterms: <http://purl.org/dc/terms/> 
+prefix foaf:    <http://xmlns.com/foaf/0.1/> 
+prefix mo:      <http://purl.org/ontology/mo/> 
+prefix owl:     <http://www.w3.org/2002/07/owl#> 
+prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> 
+prefix rml:     <http://semweb.mmlab.be/ns/rml#> 
+prefix rr:      <http://www.w3.org/ns/r2rml#> 
+prefix schema:  <http://schema.org/> 
+prefix weo:     <http://ns.inria.fr/meteo/ontology/> 
+prefix xrr:     <http://i3s.unice.fr/xr2rml#> 
+prefix xsd:     <http://www.w3.org/2001/XMLSchema#> 
+prefix qb:	<http://purl.org/linked-data/cube#> 
+prefix wes-dimension:	<http://ns.inria.fr/meteo/observationslice/dimension#>
+prefix ob-slice:	<http://ns.inria.fr/meteo/observationslice/> 
+prefix wes-measure:	<http://ns.inria.fr/meteo/observationslice/measure#>
+prefix wes-attribute:	<http://ns.inria.fr/meteo/observationslice/attribute#> 
+
+select ?stationName ?month (SUM(?rain ) as ?monthlyRain) WHERE {
+
+?station a weo:WeatherStation ;
+             rdfs:label ?stationName .
+
+FILTER(?stationName = "Alberto Santos")
+    ?s a qb:Slice ;
+           wes-dimension:station ?station ;
+           wes-dimension:year ?year ;
+           qb:observation [
+              a qb:Observation ;
+              wes-attribute:observationDate ?date ;
+              wes-measure:rainfall24h ?rain ;
+           
+           ] .
+BIND (SUBSTR(STR(?date),6,2) AS ?month)
+
+FILTER (?year = 2016)
+
+       
+}
+GROUP BY ?stationName ?month
+ORDER BY DESC(?monthlyRain )

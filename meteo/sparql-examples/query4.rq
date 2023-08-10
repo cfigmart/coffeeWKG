@@ -1,9 +1,0 @@
-#retrieve the number of weather observable properties for each feature
-PREFIX weo: <http://ns.inria.fr/meteo/ontology/>
-PREFIX ssn: <http://www.w3.org/ns/ssn/>
-select ?x (count(?y) as?nb)  where { 
-   ?x  a  <http://ns.inria.fr/meteo/ontology/MeteorologicalFeature> .
-    ?y  a  weo:WeatherProperty . 
-   ?x ssn:hasProperty ?y .
-}
-Group by ?x

@@ -90,7 +90,7 @@
     rr:predicateObjectMap [
         rr:predicate geosparql:asWKT;
           rr:objectMap [
-            rr:template "POINT({$.latitude} {$.longitude})";
+            rr:template "POINT({$.longitude} {$.latitude})";
             rr:datatype geosparql:wktLiteral
           ];
     ];
