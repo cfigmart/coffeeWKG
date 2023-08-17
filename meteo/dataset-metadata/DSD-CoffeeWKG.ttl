@@ -1,0 +1,300 @@
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix weo: <http://ns.inria.fr/meteo/ontology/> .
+@prefix wes: <http://ns.inria.fr/meteo/observationslice/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix wevp: <http://ns.inria.fr/meteo/vocab/weatherproperty/> .
+@prefix qb4st: <http://resources.opengeospatial.org/def/qbcomponents/qb4st> .
+@prefix wes-measure: <http://ns.inria.fr/meteo/observationslice/measure#> .
+@prefix wes-attribute: <http://ns.inria.fr/meteo/observationslice/attribute#> .
+@prefix wes-dimension: <http://ns.inria.fr/meteo/observationslice/dimension#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+
+
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://ns.inria.fr/meteo/observationslice/dimension#station
+wes-dimension:station rdf:type rdf:Property ;
+                      rdfs:range xsd:anyURI .
+
+
+###  http://ns.inria.fr/meteo/observationslice/dimension#year
+wes-dimension:year rdf:type rdf:Property ;
+                   rdfs:range xsd:gYear .
+
+
+###  http://ns.inria.fr/meteo/observationslice/measure#avgDailyTemperature
+wes-measure:avgDailyTemperature rdf:type rdf:Property ;
+                                rdfs:range xsd:decimal .
+
+
+###  http://ns.inria.fr/meteo/observationslice/measure#maxDailyTemperature
+wes-measure:maxDailyTemperature rdf:type rdf:Property ;
+                                rdfs:range xsd:decimal .
+
+
+###  http://ns.inria.fr/meteo/observationslice/measure#minDailyTemperature
+wes-measure:minDailyTemperature rdf:type rdf:Property ;
+                                rdfs:range xsd:decimal .
+
+
+###  http://ns.inria.fr/meteo/observationslice/measure#rainfall24h
+wes-measure:rainfall24h rdf:type rdf:Property ;
+                        rdfs:range xsd:decimal .
+
+
+###  http://ns.inria.fr/meteo/observationslice/measure#relativeHumidity
+wes-measure:relativeHumidity rdf:type rdf:Property ;
+                             rdfs:range xsd:decimal .
+
+
+###  http://ns.inria.fr/meteo/observationslice/measure#solarBrightness
+wes-measure:solarBrightness rdf:type rdf:Property ;
+                            rdfs:range xsd:decimal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/linked-data/cube#DataSet
+qb:DataSet rdf:type owl:Class .
+
+
+###  http://purl.org/linked-data/cube#DataStructureDefinition
+qb:DataStructureDefinition rdf:type owl:Class .
+
+
+###  http://purl.org/linked-data/cube#DimensionProperty
+qb:DimensionProperty rdf:type owl:Class .
+
+
+###  http://purl.org/linked-data/cube#MeasureProperty
+qb:MeasureProperty rdf:type owl:Class .
+
+
+###  http://purl.org/linked-data/cube#SliceKey
+qb:SliceKey rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2006
+<http://ns.inria.fr/meteo/dataset-fnc/2006> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2007
+<http://ns.inria.fr/meteo/dataset-fnc/2007> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .
+
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2008
+<http://ns.inria.fr/meteo/dataset-fnc/2008> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2009
+<http://ns.inria.fr/meteo/dataset-fnc/2009> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2010
+<http://ns.inria.fr/meteo/dataset-fnc/2010> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2011
+<http://ns.inria.fr/meteo/dataset-fnc/2011> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2012
+<http://ns.inria.fr/meteo/dataset-fnc/2012> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .
+
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2013
+<http://ns.inria.fr/meteo/dataset-fnc/2013> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2014
+<http://ns.inria.fr/meteo/dataset-fnc/2014> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2015
+<http://ns.inria.fr/meteo/dataset-fnc/2015> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2016
+<http://ns.inria.fr/meteo/dataset-fnc/2016> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2017
+<http://ns.inria.fr/meteo/dataset-fnc/2017> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2018
+<http://ns.inria.fr/meteo/dataset-fnc/2018> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .  
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2019
+<http://ns.inria.fr/meteo/dataset-fnc/2019> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .  
+
+###  http://ns.inria.fr/meteo/dataset-fnc/2020
+<http://ns.inria.fr/meteo/dataset-fnc/2020> rdf:type owl:NamedIndividual ,
+                                                     qb:DataSet ;
+                                            qb:structure wes:annualTimeSeries .
+
+
+###  http://ns.inria.fr/meteo/observationslice/annualTimeSeries
+wes:annualTimeSeries rdf:type owl:NamedIndividual ,
+                              qb:DataStructureDefinition ;
+                     qb:component [ qb:measure wes-measure:maxDailyTemperature
+                                  ] ,
+                                  [ qb:measure wes-measure:minDailyTemperature
+                                  ] ,
+                                  [ qb:measure wes-measure:solarBrightness
+                                  ] ,
+                                  [ qb:measure wes-measure:relativeHumidity
+                                  ] ,
+                                  [ qb:attribute wes-attribute:Date ;
+                                    qb:componentAttachment qb:Slice
+                                  ] ,
+                                  [ qb:componentAttachment qb:Slice ;
+                                    qb:dimension wes-dimension:year ;
+                                    qb:order 2
+                                  ] ,
+                                  [ qb:measure wes-measure:rainfall24h
+                                  ] ,
+                                  [ qb:measure wes-measure:avgDailyTemperature
+                                  ] ,
+                                  [ qb:componentAttachment qb:Slice ;
+                                    qb:dimension wes-dimension:station ;
+                                    qb:order 1
+                                  ] ;
+                     qb:sliceKey wes:SliceByStationAndYear .
+
+
+###  http://ns.inria.fr/meteo/observationslice/sliceByStationAndYear
+wes:sliceByStationAndYear rdf:type owl:NamedIndividual ,
+                                   qb:SliceKey ;
+                          qb:componentProperty wes-dimension:station ,
+                                               wes-dimension:year ;
+                          rdfs:comment "Meterological Data slice by grouping meterological observations of the same station together by year"@en ;
+                          rdfs:label "Meterological observations sliced by weather station and by year"@en .
+
+
+###  http://ns.inria.fr/meteo/observationslice/dimension#station
+wes-dimension:station rdf:type owl:NamedIndividual ,
+                               qb:DimensionProperty .
+
+
+###  http://ns.inria.fr/meteo/observationslice/dimension#year
+wes-dimension:year rdf:type owl:NamedIndividual ,
+                            qb:DimensionProperty .
+
+
+###  http://ns.inria.fr/meteo/observationslice/measure#avgDailyTemperature
+wes-measure:avgDailyTemperature rdf:type owl:NamedIndividual ,
+                                         qb:MeasureProperty .
+
+
+###  http://ns.inria.fr/meteo/observationslice/measure#maxDailyTemperature
+wes-measure:maxDailyTemperature rdf:type owl:NamedIndividual ,
+                                         qb:MeasureProperty .
+
+
+###  http://ns.inria.fr/meteo/observationslice/measure#minDailyTemperature
+wes-measure:minDailyTemperature rdf:type owl:NamedIndividual ,
+                                         qb:MeasureProperty .
+
+
+###  http://ns.inria.fr/meteo/observationslice/measure#rainfall24h
+wes-measure:rainfall24h rdf:type owl:NamedIndividual ,
+                                 qb:MeasureProperty .
+
+
+###  http://ns.inria.fr/meteo/observationslice/measure#relativeHumidity
+wes-measure:relativeHumidity rdf:type owl:NamedIndividual ,
+                                      qb:MeasureProperty .
+
+
+###  http://ns.inria.fr/meteo/observationslice/measure#solarBrightness
+wes-measure:solarBrightness rdf:type owl:NamedIndividual ,
+                                     qb:MeasureProperty .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+wes-dimension:station rdfs:label "a weather station as a spatial dimension" .
+
+
+wes-dimension:year rdfs:label "a year as a temporal dimension" .
+
+
+wes-measure:avgDailyTemperature qb:concept <https://ns.inria.fr/meteo/vocab/agroclimatic/meanDailyAirTemperature> ;
+                                sdmx-attribute:unitMeasure <http://qudt.org/vocab/unit/DEG_C> ;
+                                rdfs:label "Daily average Temperature in Celsius"@en .
+
+
+wes-measure:maxDailyTemperature sdmx-attribute:unitMeasure <http://qudt.org/vocab/unit/DEG_C> ;
+                                rdfs:label "Daily maximum temperature in Celsius"@en ;
+                                qb:concept <http://ns.inria.fr/meteo/vocab/agroclimatic/maxDailyAirTemperature> .
+
+
+wes-measure:minDailyTemperature qb:concept <http://ns.inria.fr/meteo/vocab/agroclimatic/minDailyAirTemperature> ;
+                                sdmx-attribute:unitMeasure <http://qudt.org/vocab/unit/DEG_C> ;
+                                rdfs:label "Daily minimum temperature in Celsius"@en .
+
+
+wes-measure:rainfall24h sdmx-attribute:unitMeasure <http://qudt.org/vocab/unit/MilliM> ;
+                        rdfs:label "Cumulative Rainfall during an interval of 24h"@en ;
+                        qb:concept wevp:precipitationAmount .
+
+
+wes-measure:relativeHumidity rdfs:label "Daily relative air humidity"@en ;
+                             sdmx-attribute:unitMeasure <https://qudt.org/vocab/unit/PERCENT> ;
+                             qb:concept wevp:airRelativeHumidity .
+
+
+wes-measure:solarBrightness sdmx-attribute:unitMeasure <https://qudt.org/vocab/unit/HR> ;
+                            rdfs:label "Daily sunshine duration"@en ;
+                            qb:concept <http://ns.inria.fr/meteo/vocab/agroclimatic/sunshineDuration> .
+
+
