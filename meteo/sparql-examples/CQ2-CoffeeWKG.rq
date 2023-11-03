@@ -1,26 +1,17 @@
-prefix geo:        <http://www.w3.org/2003/01/geo/wgs84_pos#> 
-prefix weo:        <http://ns.inria.fr/meteo/ontology/> 
-prefix geosparql:  <http://www.opengis.net/ont/geosparql#> 
-prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-prefix xsd:        <http://www.w3.org/2001/XMLSchema#> 
-prefix xrr:        <http://i3s.unice.fr/xr2rml#> 
-prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> 
-prefix wd:         <http://www.wikidata.org/entity/> 
+#CQ2: retrieving the closest station to a specific spatial point 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix geo:        <http://www.w3.org/2003/01/geo/wgs84_pos#>
 prefix geof:       <http://www.opengis.net/def/function/geosparql/>
+prefix geosparql:  <http://www.opengis.net/ont/geosparql#>
 prefix uom:        <http://www.opengis.net/def/uom/OGC/1.0/>
-prefix wdt:       <http://www.wikidata.org/prop/direct/>
-prefix wd:        <http://www.wikidata.org/entity/>
-
-
-SELECT  ?label ?lat ?long ?coordinates ?distance 
-WHERE {
-        ?x rdfs:label ?label ;
-           geosparql:hasGeometry [ geosparql:asWKT ?coordinates];
-           geo:lat ?lat; geo:long ?long .
-        BIND("POINT(-74.40055555555556 4.950277777777778)"^^<http://www.opengis.net/ont/geosparql#wktLiteral> as ?Currentposition)
-
-        BIND (geof:distance(?coordinates,?Currentposition , uom:metre) as ?distance)     
-        
-    }
-    ORDER BY ?distance
-LIMIT 1
+SELECT ?stationName ?lat ?long ?coordinates ?distance WHERE {
+    ?station rdfs:label ?stationName ;
+       geosparql:hasGeometry [geosparql:asWKT ?coordinates];
+       geo:lat ?lat; geo:long ?long .
+  BIND("POINT(-74.40055555555556 4.950277777777778)"^^geosparql:wktLiteral
+        as ?Currentposition)
+ BIND (geof:distance(?coordinates,?Currentposition,uom:metre) as ?distance)
+}
+ORDER BY ?distance
+LIMIT 3

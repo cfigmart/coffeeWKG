@@ -1,0 +1,45 @@
+#CQ1: Retrieve meteorological properties 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb:  <http://purl.org/linked-data/cube#>
+
+SELECT ?measure ?vocabConcept ?measureLabel
+WHERE {
+?s rdf:type qb:DataStructureDefinition ;
+   qb:component [ qb:measure ?measure] .
+	?measure rdfs:label ?measureLabel; 
+          qb:concept ?vocabConcept.
+}
+
+#A similar query: 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb:  <http://purl.org/linked-data/cube#>
+PREFIX wes-dimension:  <http://ns.inria.fr/meteo/observationslice/dimension#>
+PREFIX sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#>
+SELECT distinct ?station ?measure ?vocabConcept ?measureLabel ?measurementUnit
+WHERE {
+    ?slice a qb:Slice;
+     wes-dimension:station ?station;
+     qb:observation
+              [  a  qb:Observation; ?measure ?value ].
+    ?measure rdfs:label ?measureLabel; qb:concept ?vocabConcept ; sdmx-attribute:unitMeasure ?measurementUnit.
+}
+LIMIT 100
+
+
+#Retrieve meteorological properties supported by a specific weather station
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb:  <http://purl.org/linked-data/cube#>
+PREFIX wes-dimension:  <http://ns.inria.fr/meteo/observationslice/dimension#>
+PREFIX sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#>
+SELECT distinct ?measure ?vocabConcept ?measureLabel ?measurementUnit
+WHERE {
+    ?slice a qb:Slice;
+     wes-dimension:station <http://ns.inria.fr/meteo/weatherstation/COXX00040>;
+     qb:observation
+              [  a  qb:Observation; ?measure ?value ].
+    ?measure rdfs:label ?measureLabel; qb:concept ?vocabConcept ; sdmx-attribute:unitMeasure ?measurementUnit.
+}
+LIMIT 100
